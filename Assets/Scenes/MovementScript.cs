@@ -21,6 +21,7 @@ public class MovementScript : MonoBehaviour
         //rb.velocity = new Vector3(forwardDirection.x * speed, rb.velocity.y, forwardDirection.z * speed);
         Vector3 forwardDirection = Quaternion.Euler(0, curYrotation, 0) * Vector3.forward;
     
+    // עדכון המהירות של ה-Rigidbody
         rb.velocity = new Vector3(forwardDirection.x * speed, rb.velocity.y, forwardDirection.z * speed);
     }
     public void StopMovement(){
