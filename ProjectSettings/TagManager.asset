@@ -6,6 +6,12 @@ TagManager:
   tags:
   - Floor
   - Monster
+  - floor
+  - player
+  - bullet
+  - monster
+  - monsterBody
+  - score
   layers:
   - Default
   - TransparentFX

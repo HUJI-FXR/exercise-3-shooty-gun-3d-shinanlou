@@ -43,17 +43,18 @@ public class Scorescriptmanager : MonoBehaviour
         comboTimer = 0f;  
     }
 
-    // Method to add points to the score
-    public void AddScore(int points)
+    public void AddScore()
     {
-        float scoreIncrement = 1f + (comboBonus / comboTimer);
+        // חישוב הציון לפי הזמן שעבר
+        float points = 1f + (comboBonus / comboTimer);
+        score += Mathf.FloorToInt(points);  // הוספת הנקודות לציון
+        comboTimer = 0f;  // איפוס טיימר הקומבו
+        UpdateScoreBar();  // עדכון תצוגת הנקודות
+    }
 
-    // הוספת הנקודות בסקואר
-        score += Mathf.FloorToInt(scoreIncrement);  // הנקודות מעוגלות למספר שלם
-
-    // אפס את ה-comboTimer אחרי הוספת הנקודות
-        comboTimer = 0f;
-
-    // עדכון תצוגת הנקודות
-        UpdateScoreBar();    }
+    public float GetScore()
+    {
+        return score;
+    }
+    
 }
