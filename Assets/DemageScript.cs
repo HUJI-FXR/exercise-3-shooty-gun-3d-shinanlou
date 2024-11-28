@@ -32,6 +32,16 @@ public class DemageScript : MonoBehaviour
             collision.gameObject.GetComponent<LifeTotalScript>().lifeTotal -=
                 Random.Range(minDamage, maxDamage);
             Destroy(gameObject);
+
+            GameObject player = GameObject.FindGameObjectWithTag("score");
+            if (player != null)
+            {
+                Scorescriptmanager scoreManager = player.GetComponent<Scorescriptmanager>();  // קריאה לסקריפט החדש
+                if (scoreManager != null)
+                {
+                    scoreManager.AddScore(1);  // הוספת נקודה לשחקן
+                }
+            }
         }
     }
 }
